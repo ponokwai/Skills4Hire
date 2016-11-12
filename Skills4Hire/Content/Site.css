@@ -1,0 +1,474 @@
+﻿/*Dummy Page*/
+/*.dummyIcon {
+    color: #267158;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 75px;
+}*/
+
+/*Nav Features*/
+.site-brand {
+    color: #267158;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #267158;
+}
+
+.dropdown-menu > li > a {
+    color: #267158;
+}
+
+.navbar-wrapper > .container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-default .navbar-toggle {
+    border: 2px solid #267158;
+    background-color: none;
+}
+
+    .navbar-default .navbar-toggle:hover {
+        background-color: silver;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #267158;
+    }
+
+body {
+    padding-top: 65px;
+    font-family: 'Roboto',arial,sans-serif;
+    font-size: 14.5px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+    body a {
+        color: #267158;
+    }
+
+/*Body Text*/
+.grid-table {
+    color: black;
+}
+
+h1, h2 {
+    color: #267158;
+    text-align: center;
+    font-family: 'Roboto Slab',palatino,serif;
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: -.2px;
+    line-height: 38px;
+}
+
+h3, h4 {
+    color: #267158;
+    font-size: 18px;
+    line-height: 20px;
+}
+/*Body*/
+
+.body-content {
+    min-height: 550px;
+    /*padding-left: 15px;*/
+    /*padding-right: 15px;*/
+}
+
+.default-body-content {
+    min-height: 550px;
+}
+
+.fview-detail .row {
+    min-height: 50px;
+}
+
+.fview-detail .col-sm-3 {
+    font-weight: bold;
+    font-weight: 100;
+    font-size: 14px;
+    color: #888;
+    font-family: Algerian;
+}
+
+.canProfile h4 {
+    text-align: left;
+}
+
+.content-heading h4 {
+    text-transform: none;
+}
+
+.text-center {
+    text-align: center;
+}
+.main-bg-container {
+    min-height: 540px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: url(../Images/SiteBuild/bg.jpg);
+}
+
+.item {
+    padding-top: 50px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.btn-link {
+    /*text-transform: inherit;*/
+    color: #267158;
+}
+
+.centralise {
+    align-content: center;
+    align-items: center;
+}
+
+.icon-donate {
+    color: #267158;
+    font-size: 300px;
+    text-align: center;
+}
+
+.col-donate {
+    text-align: center;
+    top: 0px;
+    left: 0px;
+}
+
+
+/*Web form validation*/
+.FormError {
+    color: red;
+}
+
+.lblFeedBack {
+    color: green;
+}
+
+p {
+    font-weight: 300;
+}
+
+.lead {
+    color: #555;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.pop-help {
+    color: silver;
+}
+
+.blueLink {
+    color: #337ab7;
+    font-size: 14px;
+}
+
+/* info and errors */
+.message-info {
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error {
+    clear: both;
+    color: #e80c4d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success {
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error {
+    color: #e80c4d;
+}
+
+/*Update info*/
+.PleaseWait {
+    height: 32px;
+    width: 100%;
+    background-image: url(../Images/PleaseWait.gif);
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    line-height: 32px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 400px;
+}
+
+.input-well {
+    max-width: 450px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+
+
+
+/* Homepage Features*/
+
+.frontend-Banner {
+    min-height: 280px;
+    background-color: #267158;
+    text-align: center;
+}
+
+.xlBcase {
+    font-size: 400px;
+    padding-top: 200px;
+    color: #267158;
+}
+
+.banner-icon {
+    color: gold;
+}
+
+.brand-icon {
+    font-size: 60px;
+}
+
+.banner-text {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial;
+}
+
+/*Services Zone*/
+.text-primary {
+    color: #267158;
+}
+
+.features-row {
+    text-align: center;
+}
+
+.service-heading {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0px;
+}
+
+.service-text {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.service-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+    .service-link:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+.service-feature:hover {
+    background-color: #c6eade;
+    border-radius: 20px;
+}
+/*Animate Features*/
+.glideLeft {
+    visibility: visible;
+    animation-name: fadeInLeft;
+    animation-duration: 2s;
+}
+
+.glideRight {
+    visibility: visible;
+    animation-name: fadeInRight;
+    animation-duration: 2s;
+}
+
+.biz-advert {
+    background-color: #D4D4D1;
+    border-radius: 10px;
+}
+
+.well {
+    background-image: linear-gradient(to bottom, #c6eade 0px, #c6eade 100%);
+}
+
+/*Form Input*/
+select, select.form-control {
+    border: 1px solid silver;
+    background-color: #FFF;
+}
+
+textarea, textarea.form-control, input.form-control, input[type="text"], input[type="password"], input[type="email"], input[type="number"], .form-control[type="text"], .form-control[type="password"], .form-control[type="email"], .form-control[type="tel"], .form-control[contenteditable] {
+    border: 1px solid silver;
+    background-color: #FFF;
+}
+
+.form-control, input {
+    border-width: 2px;
+    box-shadow: none;
+    text-align: left;
+}
+
+table {
+        width: 100%;
+    }
+
+/*Client side Paginated table*/
+/*thead {
+    background: #6cbfa4;
+    color: #fff;
+}*/
+
+/*td {
+    width: 10em;
+    padding: 0.3em;
+}*/
+
+/*tbody {
+    background: #ccc;
+}*/
+
+div.pager {
+    text-align: center;
+    margin: 1em 0;
+}
+
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #267158;
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: #c00;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    
+
+    h1, h2 {
+        font-size: 30px;
+        line-height: 58px;
+    }
+
+    h3, h4 {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .frontend-Banner {
+        min-height: 300px;
+    }
+
+    .banner-text {
+        font-size: 35px;
+    }
+}
+
+/*CAROUSEL*/
+#owl-demo .item {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/*Footer Design*/
+
+footer {
+    margin-top: 0px;
+    padding-top: 10px;
+    background-color: #c6eade;
+    min-height: 70px;
+    text-align: center;
+    color: #848484;
+    font-family: 'Roboto',arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+    footer a {
+        color: #555;
+    }
+
+        footer a:hover, footer a:focus {
+            color: #D8281A;
+            text-decoration: none;
+        }
+
+    footer hr {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    footer h4 {
+        margin-bottom: 0px;
+    }
+
+.fa-facebook-square {
+    color: #3b5998;
+}
+
+.fa-twitter-square {
+    color: #4099ff;
+}
+
+.fa-google-plus-square {
+    color: #cc2c2c;
+}
+
+    .fa-facebook-square:hover, .fa-twitter-square:hover, .fa-google-plus-square:hover {
+        font-size: 30px;
+    }
+
+
+
+
+/*MANAGEMENT SPECIFIC*/
+.mgt-table {
+    font-size: 13px;
+    font-weight: 100;
+}
+
+    .mgt-table th a {
+        color: black;
+    }
+
+.smallfont {
+    font-size: 14px;
+}

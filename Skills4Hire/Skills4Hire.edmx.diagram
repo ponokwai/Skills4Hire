@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="552bf2e9dbc8495995ec798ba845be4d" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="skillsforhireModel.budget" Width="1.5" PointX="13.25" PointY="9.5" />
+        <EntityTypeShape EntityType="skillsforhireModel.deletedmembership" Width="1.5" PointX="8.5" PointY="7" />
+        <EntityTypeShape EntityType="skillsforhireModel.gender" Width="1.5" PointX="3" PointY="10.375" />
+        <EntityTypeShape EntityType="skillsforhireModel.indprofile" Width="1.5" PointX="5.25" PointY="9.625" />
+        <EntityTypeShape EntityType="skillsforhireModel.jobprofile" Width="1.5" PointX="10.75" PointY="9.5" />
+        <EntityTypeShape EntityType="skillsforhireModel.jobstatu" Width="1.5" PointX="13.25" PointY="13.25" />
+        <EntityTypeShape EntityType="skillsforhireModel.localgovtofresidence" Width="1.5" PointX="8.125" PointY="13.875" />
+        <EntityTypeShape EntityType="skillsforhireModel.skill" Width="1.5" PointX="8.125" PointY="9.5" />
+        <EntityTypeShape EntityType="skillsforhireModel.starttime" Width="1.5" PointX="13.25" PointY="11.375" />
+        <EntityTypeShape EntityType="skillsforhireModel.stateofresidence" Width="1.5" PointX="8.125" PointY="11.5" />
+        <AssociationConnector Association="skillsforhireModel.fk_JobProfile_Budget1" />
+        <AssociationConnector Association="skillsforhireModel.fk_indprofile_gender" />
+        <AssociationConnector Association="skillsforhireModel.fk_indprofile_localgovtofresidence1" />
+        <AssociationConnector Association="skillsforhireModel.fk_indprofile_skill1" />
+        <AssociationConnector Association="skillsforhireModel.fk_indprofile_stateofresidence1" />
+        <AssociationConnector Association="skillsforhireModel.fk_JobProfile_JobStatus1" />
+        <AssociationConnector Association="skillsforhireModel.fk_JobProfile_localgovtofresidence1" />
+        <AssociationConnector Association="skillsforhireModel.fk_JobProfile_skill1" />
+        <AssociationConnector Association="skillsforhireModel.fk_JobProfile_StartTime1" />
+        <AssociationConnector Association="skillsforhireModel.fk_JobProfile_stateofresidence1" />
+        <AssociationConnector Association="skillsforhireModel.fk_localgovtofresidence_stateofresidence1" />
+        <EntityTypeShape EntityType="skillsforhireModel.mysavedjob" Width="1.5" PointX="6.5" PointY="7" />
+        <EntityTypeShape EntityType="skillsforhireModel.jobpostflag" Width="1.5" PointX="10.5" PointY="7" />
+        <EntityTypeShape EntityType="skillsforhireModel.profileflag" Width="1.5" PointX="4.75" PointY="7" />
+        <EntityTypeShape EntityType="skillsforhireModel.bankpaymentrequest" Width="1.5" PointX="3" PointY="6.875" />
+        <EntityTypeShape EntityType="skillsforhireModel.guardianjob" Width="1.5" PointX="1.125" PointY="6.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

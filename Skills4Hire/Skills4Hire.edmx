@@ -1,0 +1,965 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="skillsforhireModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bankpaymentrequest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="100" />
+          <Property Name="emailUsed" Type="varchar" MaxLength="200" />
+          <Property Name="paymentType" Type="varchar" MaxLength="20" />
+          <Property Name="dateRequested" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="budget">
+          <Key>
+            <PropertyRef Name="idBudget" />
+          </Key>
+          <Property Name="idBudget" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstBudget" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="deletedmembership">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="leavingReason" Type="longtext" />
+          <Property Name="Date" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="gender">
+          <Key>
+            <PropertyRef Name="idGender" />
+          </Key>
+          <Property Name="idGender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="guardianjob">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="150" />
+          <Property Name="JobDescription" Type="longtext" />
+          <Property Name="Experience" Type="longtext" />
+          <Property Name="Qualification" Type="longtext" />
+          <Property Name="HowToApply" Type="mediumtext" />
+          <Property Name="PublicationDate" Type="date" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="Publish" Type="bool" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeEdited" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="indprofile">
+          <Key>
+            <PropertyRef Name="idIndProfile" />
+          </Key>
+          <Property Name="idIndProfile" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="200" />
+          <Property Name="GenderId" Type="int" />
+          <Property Name="Age" Type="int" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="45" />
+          <Property Name="EmailAddr" Type="varchar" MaxLength="100" />
+          <Property Name="StateId" Type="int" />
+          <Property Name="LocalGovtId" Type="int" />
+          <Property Name="Town" Type="varchar" MaxLength="100" />
+          <Property Name="SkillsId" Type="int" />
+          <Property Name="SkillsSpecific" Type="varchar" MaxLength="500" />
+          <Property Name="JobExperience" Type="longtext" />
+          <Property Name="Qualification" Type="longtext" />
+          <Property Name="Note" Type="varchar" MaxLength="200" />
+          <Property Name="Publish" Type="bit" />
+          <Property Name="UserName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Precision="0" />
+          <Property Name="LastModified" Type="datetime" Precision="0" />
+          <Property Name="GoldSubExpire" Type="datetime" Precision="0" />
+          <Property Name="IsGoldMember" Type="bool" />
+          <Property Name="SortOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="jobpostflag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostURL" Type="varchar" MaxLength="300" />
+          <Property Name="FlagReason" Type="longtext" />
+          <Property Name="DateTimeReported" Type="datetime" Precision="0" />
+          <Property Name="ReportedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="jobprofile">
+          <Key>
+            <PropertyRef Name="idJobProfile" />
+          </Key>
+          <Property Name="idJobProfile" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobStatusId" Type="int" />
+          <Property Name="StartTimeId" Type="int" />
+          <Property Name="JobLocationStateId" Type="int" />
+          <Property Name="JobLocationLGId" Type="int" />
+          <Property Name="JobLocationTown" Type="varchar" MaxLength="100" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="200" />
+          <Property Name="JobDescription" Type="longtext" />
+          <Property Name="SkillId" Type="int" />
+          <Property Name="SpecificSkill" Type="varchar" MaxLength="200" />
+          <Property Name="BudgetId" Type="int" />
+          <Property Name="ContactFullName" Type="varchar" MaxLength="200" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="45" />
+          <Property Name="ContactEmail" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="DateCreated" Type="datetime" Precision="0" />
+          <Property Name="LastModified" Type="datetime" Precision="0" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="100" />
+          <Property Name="Publicise" Type="bool" />
+        </EntityType>
+        <EntityType Name="jobstatus">
+          <Key>
+            <PropertyRef Name="idJobStatus" />
+          </Key>
+          <Property Name="idJobStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ToStart" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="localgovtofresidence">
+          <Key>
+            <PropertyRef Name="idLocalGovtOfResidence" />
+          </Key>
+          <Property Name="idLocalGovtOfResidence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LGName" Type="varchar" MaxLength="100" />
+          <Property Name="StateId" Type="int" />
+        </EntityType>
+        <EntityType Name="mysavedjob">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sJobTitle" Type="varchar" MaxLength="200" />
+          <Property Name="sJobId" Type="int" />
+          <Property Name="DateSaved" Type="date" />
+          <Property Name="SavedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="profileflag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProfileUrl" Type="varchar" MaxLength="150" />
+          <Property Name="FlagReason" Type="longtext" />
+          <Property Name="DateTimeReported" Type="datetime" Precision="0" />
+          <Property Name="ReportedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="skill">
+          <Key>
+            <PropertyRef Name="idSkill" />
+          </Key>
+          <Property Name="idSkill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillType" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="starttime">
+          <Key>
+            <PropertyRef Name="idStartTime" />
+          </Key>
+          <Property Name="idStartTime" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobStartTime" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="stateofresidence">
+          <Key>
+            <PropertyRef Name="idStateOfResidence" />
+          </Key>
+          <Property Name="idStateOfResidence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <Association Name="fk_indprofile_gender1">
+          <End Role="gender" Type="Self.gender" Multiplicity="0..1" />
+          <End Role="indprofile" Type="Self.indprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gender">
+              <PropertyRef Name="idGender" />
+            </Principal>
+            <Dependent Role="indprofile">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_indprofile_localgovtofresidence1">
+          <End Role="localgovtofresidence" Type="Self.localgovtofresidence" Multiplicity="0..1" />
+          <End Role="indprofile" Type="Self.indprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="localgovtofresidence">
+              <PropertyRef Name="idLocalGovtOfResidence" />
+            </Principal>
+            <Dependent Role="indprofile">
+              <PropertyRef Name="LocalGovtId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_indprofile_skill1">
+          <End Role="skill" Type="Self.skill" Multiplicity="0..1" />
+          <End Role="indprofile" Type="Self.indprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="skill">
+              <PropertyRef Name="idSkill" />
+            </Principal>
+            <Dependent Role="indprofile">
+              <PropertyRef Name="SkillsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_indprofile_stateofresidence1">
+          <End Role="stateofresidence" Type="Self.stateofresidence" Multiplicity="0..1" />
+          <End Role="indprofile" Type="Self.indprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stateofresidence">
+              <PropertyRef Name="idStateOfResidence" />
+            </Principal>
+            <Dependent Role="indprofile">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_Budget1">
+          <End Role="budget" Type="Self.budget" Multiplicity="0..1" />
+          <End Role="jobprofile" Type="Self.jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="budget">
+              <PropertyRef Name="idBudget" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="BudgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_JobStatus1">
+          <End Role="jobstatus" Type="Self.jobstatus" Multiplicity="0..1" />
+          <End Role="jobprofile" Type="Self.jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobstatus">
+              <PropertyRef Name="idJobStatus" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="JobStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_localgovtofresidence1">
+          <End Role="localgovtofresidence" Type="Self.localgovtofresidence" Multiplicity="0..1" />
+          <End Role="jobprofile" Type="Self.jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="localgovtofresidence">
+              <PropertyRef Name="idLocalGovtOfResidence" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="JobLocationLGId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_skill1">
+          <End Role="skill" Type="Self.skill" Multiplicity="0..1" />
+          <End Role="jobprofile" Type="Self.jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="skill">
+              <PropertyRef Name="idSkill" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_StartTime1">
+          <End Role="starttime" Type="Self.starttime" Multiplicity="0..1" />
+          <End Role="jobprofile" Type="Self.jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="starttime">
+              <PropertyRef Name="idStartTime" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="StartTimeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_stateofresidence1">
+          <End Role="stateofresidence" Type="Self.stateofresidence" Multiplicity="0..1" />
+          <End Role="jobprofile" Type="Self.jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stateofresidence">
+              <PropertyRef Name="idStateOfResidence" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="JobLocationStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_localgovtofresidence_stateofresidence1">
+          <End Role="stateofresidence" Type="Self.stateofresidence" Multiplicity="0..1" />
+          <End Role="localgovtofresidence" Type="Self.localgovtofresidence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stateofresidence">
+              <PropertyRef Name="idStateOfResidence" />
+            </Principal>
+            <Dependent Role="localgovtofresidence">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="skillsforhireModelStoreContainer">
+          <EntitySet Name="bankpaymentrequest" EntityType="Self.bankpaymentrequest" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="budget" EntityType="Self.budget" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="deletedmembership" EntityType="Self.deletedmembership" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="gender" EntityType="Self.gender" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="guardianjob" EntityType="Self.guardianjob" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="indprofile" EntityType="Self.indprofile" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="jobpostflag" EntityType="Self.jobpostflag" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="jobprofile" EntityType="Self.jobprofile" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="jobstatus" EntityType="Self.jobstatus" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="localgovtofresidence" EntityType="Self.localgovtofresidence" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="mysavedjob" EntityType="Self.mysavedjob" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="profileflag" EntityType="Self.profileflag" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="skill" EntityType="Self.skill" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="starttime" EntityType="Self.starttime" Schema="skillsforhire" store:Type="Tables" />
+          <EntitySet Name="stateofresidence" EntityType="Self.stateofresidence" Schema="skillsforhire" store:Type="Tables" />
+          <AssociationSet Name="fk_indprofile_gender1" Association="Self.fk_indprofile_gender1">
+            <End Role="gender" EntitySet="gender" />
+            <End Role="indprofile" EntitySet="indprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_indprofile_localgovtofresidence1" Association="Self.fk_indprofile_localgovtofresidence1">
+            <End Role="localgovtofresidence" EntitySet="localgovtofresidence" />
+            <End Role="indprofile" EntitySet="indprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_indprofile_skill1" Association="Self.fk_indprofile_skill1">
+            <End Role="skill" EntitySet="skill" />
+            <End Role="indprofile" EntitySet="indprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_indprofile_stateofresidence1" Association="Self.fk_indprofile_stateofresidence1">
+            <End Role="stateofresidence" EntitySet="stateofresidence" />
+            <End Role="indprofile" EntitySet="indprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_Budget1" Association="Self.fk_JobProfile_Budget1">
+            <End Role="budget" EntitySet="budget" />
+            <End Role="jobprofile" EntitySet="jobprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_JobStatus1" Association="Self.fk_JobProfile_JobStatus1">
+            <End Role="jobstatus" EntitySet="jobstatus" />
+            <End Role="jobprofile" EntitySet="jobprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_localgovtofresidence1" Association="Self.fk_JobProfile_localgovtofresidence1">
+            <End Role="localgovtofresidence" EntitySet="localgovtofresidence" />
+            <End Role="jobprofile" EntitySet="jobprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_skill1" Association="Self.fk_JobProfile_skill1">
+            <End Role="skill" EntitySet="skill" />
+            <End Role="jobprofile" EntitySet="jobprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_StartTime1" Association="Self.fk_JobProfile_StartTime1">
+            <End Role="starttime" EntitySet="starttime" />
+            <End Role="jobprofile" EntitySet="jobprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_stateofresidence1" Association="Self.fk_JobProfile_stateofresidence1">
+            <End Role="stateofresidence" EntitySet="stateofresidence" />
+            <End Role="jobprofile" EntitySet="jobprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_localgovtofresidence_stateofresidence1" Association="Self.fk_localgovtofresidence_stateofresidence1">
+            <End Role="stateofresidence" EntitySet="stateofresidence" />
+            <End Role="localgovtofresidence" EntitySet="localgovtofresidence" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="skillsforhireModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="skillsforhireEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="budgets" EntityType="skillsforhireModel.budget" />
+          <EntitySet Name="deletedmemberships" EntityType="skillsforhireModel.deletedmembership" />
+          <EntitySet Name="genders" EntityType="skillsforhireModel.gender" />
+          <EntitySet Name="indprofiles" EntityType="skillsforhireModel.indprofile" />
+          <EntitySet Name="jobprofiles" EntityType="skillsforhireModel.jobprofile" />
+          <EntitySet Name="jobstatus" EntityType="skillsforhireModel.jobstatu" />
+          <EntitySet Name="localgovtofresidences" EntityType="skillsforhireModel.localgovtofresidence" />
+          <EntitySet Name="skills" EntityType="skillsforhireModel.skill" />
+          <EntitySet Name="starttimes" EntityType="skillsforhireModel.starttime" />
+          <EntitySet Name="stateofresidences" EntityType="skillsforhireModel.stateofresidence" />
+          <AssociationSet Name="fk_JobProfile_Budget1" Association="skillsforhireModel.fk_JobProfile_Budget1">
+            <End Role="budget" EntitySet="budgets" />
+            <End Role="jobprofile" EntitySet="jobprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_indprofile_gender" Association="skillsforhireModel.fk_indprofile_gender">
+            <End EntitySet="genders" Role="gender" />
+            <End EntitySet="indprofiles" Role="indprofile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_indprofile_localgovtofresidence1" Association="skillsforhireModel.fk_indprofile_localgovtofresidence1">
+            <End Role="localgovtofresidence" EntitySet="localgovtofresidences" />
+            <End Role="indprofile" EntitySet="indprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_indprofile_skill1" Association="skillsforhireModel.fk_indprofile_skill1">
+            <End Role="skill" EntitySet="skills" />
+            <End Role="indprofile" EntitySet="indprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_indprofile_stateofresidence1" Association="skillsforhireModel.fk_indprofile_stateofresidence1">
+            <End Role="stateofresidence" EntitySet="stateofresidences" />
+            <End Role="indprofile" EntitySet="indprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_JobStatus1" Association="skillsforhireModel.fk_JobProfile_JobStatus1">
+            <End Role="jobstatu" EntitySet="jobstatus" />
+            <End Role="jobprofile" EntitySet="jobprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_localgovtofresidence1" Association="skillsforhireModel.fk_JobProfile_localgovtofresidence1">
+            <End Role="localgovtofresidence" EntitySet="localgovtofresidences" />
+            <End Role="jobprofile" EntitySet="jobprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_skill1" Association="skillsforhireModel.fk_JobProfile_skill1">
+            <End Role="skill" EntitySet="skills" />
+            <End Role="jobprofile" EntitySet="jobprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_StartTime1" Association="skillsforhireModel.fk_JobProfile_StartTime1">
+            <End Role="starttime" EntitySet="starttimes" />
+            <End Role="jobprofile" EntitySet="jobprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_JobProfile_stateofresidence1" Association="skillsforhireModel.fk_JobProfile_stateofresidence1">
+            <End Role="stateofresidence" EntitySet="stateofresidences" />
+            <End Role="jobprofile" EntitySet="jobprofiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_localgovtofresidence_stateofresidence1" Association="skillsforhireModel.fk_localgovtofresidence_stateofresidence1">
+            <End Role="stateofresidence" EntitySet="stateofresidences" />
+            <End Role="localgovtofresidence" EntitySet="localgovtofresidences" />
+          </AssociationSet>
+          <EntitySet Name="mysavedjobs" EntityType="skillsforhireModel.mysavedjob" />
+          <EntitySet Name="jobpostflags" EntityType="skillsforhireModel.jobpostflag" />
+          <EntitySet Name="profileflags" EntityType="skillsforhireModel.profileflag" />
+          <EntitySet Name="bankpaymentrequests" EntityType="skillsforhireModel.bankpaymentrequest" />
+          <EntitySet Name="guardianjobs" EntityType="skillsforhireModel.guardianjob" />
+        </EntityContainer>
+        <EntityType Name="budget">
+          <Key>
+            <PropertyRef Name="idBudget" />
+          </Key>
+          <Property Name="idBudget" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstBudget" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="jobprofiles" Relationship="skillsforhireModel.fk_JobProfile_Budget1" FromRole="budget" ToRole="jobprofile" />
+        </EntityType>
+        <EntityType Name="deletedmembership">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="leavingReason" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="gender">
+          <Key>
+            <PropertyRef Name="idGender" />
+          </Key>
+          <Property Name="idGender" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="indprofiles" Relationship="skillsforhireModel.fk_indprofile_gender" FromRole="gender" ToRole="indprofile" />
+        </EntityType>
+        <EntityType Name="indprofile">
+          <Key>
+            <PropertyRef Name="idIndProfile" />
+          </Key>
+          <Property Name="idIndProfile" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="GenderId" Type="Int32" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="ContactNo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="EmailAddr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StateId" Type="Int32" />
+          <Property Name="LocalGovtId" Type="Int32" />
+          <Property Name="Town" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SkillsId" Type="Int32" />
+          <Property Name="SkillsSpecific" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="JobExperience" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="Qualification" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Publish" Type="Boolean" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="LastModified" Type="DateTime" />
+          <Property Name="GoldSubExpire" Type="DateTime" />
+          <Property Name="IsGoldMember" Type="Boolean" />
+          <NavigationProperty Name="gender" Relationship="skillsforhireModel.fk_indprofile_gender" FromRole="indprofile" ToRole="gender" />
+          <NavigationProperty Name="localgovtofresidence" Relationship="skillsforhireModel.fk_indprofile_localgovtofresidence1" FromRole="indprofile" ToRole="localgovtofresidence" />
+          <NavigationProperty Name="skill" Relationship="skillsforhireModel.fk_indprofile_skill1" FromRole="indprofile" ToRole="skill" />
+          <NavigationProperty Name="stateofresidence" Relationship="skillsforhireModel.fk_indprofile_stateofresidence1" FromRole="indprofile" ToRole="stateofresidence" />
+          <Property Name="SortOrder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="jobprofile">
+          <Key>
+            <PropertyRef Name="idJobProfile" />
+          </Key>
+          <Property Name="idJobProfile" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobStatusId" Type="Int32" />
+          <Property Name="StartTimeId" Type="Int32" />
+          <Property Name="JobLocationStateId" Type="Int32" />
+          <Property Name="JobLocationLGId" Type="Int32" />
+          <Property Name="JobLocationTown" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="JobTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JobDescription" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="SkillId" Type="Int32" />
+          <Property Name="SpecificSkill" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BudgetId" Type="Int32" />
+          <Property Name="ContactFullName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNumber" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ContactEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="LastModified" Type="DateTime" />
+          <Property Name="ExpiryDate" Type="DateTime" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Publicise" Type="Boolean" />
+          <NavigationProperty Name="budget" Relationship="skillsforhireModel.fk_JobProfile_Budget1" FromRole="jobprofile" ToRole="budget" />
+          <NavigationProperty Name="jobstatu" Relationship="skillsforhireModel.fk_JobProfile_JobStatus1" FromRole="jobprofile" ToRole="jobstatu" />
+          <NavigationProperty Name="localgovtofresidence" Relationship="skillsforhireModel.fk_JobProfile_localgovtofresidence1" FromRole="jobprofile" ToRole="localgovtofresidence" />
+          <NavigationProperty Name="skill" Relationship="skillsforhireModel.fk_JobProfile_skill1" FromRole="jobprofile" ToRole="skill" />
+          <NavigationProperty Name="starttime" Relationship="skillsforhireModel.fk_JobProfile_StartTime1" FromRole="jobprofile" ToRole="starttime" />
+          <NavigationProperty Name="stateofresidence" Relationship="skillsforhireModel.fk_JobProfile_stateofresidence1" FromRole="jobprofile" ToRole="stateofresidence" />
+        </EntityType>
+        <EntityType Name="jobstatu">
+          <Key>
+            <PropertyRef Name="idJobStatus" />
+          </Key>
+          <Property Name="idJobStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ToStart" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="jobprofiles" Relationship="skillsforhireModel.fk_JobProfile_JobStatus1" FromRole="jobstatu" ToRole="jobprofile" />
+        </EntityType>
+        <EntityType Name="localgovtofresidence">
+          <Key>
+            <PropertyRef Name="idLocalGovtOfResidence" />
+          </Key>
+          <Property Name="idLocalGovtOfResidence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LGName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StateId" Type="Int32" />
+          <NavigationProperty Name="indprofiles" Relationship="skillsforhireModel.fk_indprofile_localgovtofresidence1" FromRole="localgovtofresidence" ToRole="indprofile" />
+          <NavigationProperty Name="jobprofiles" Relationship="skillsforhireModel.fk_JobProfile_localgovtofresidence1" FromRole="localgovtofresidence" ToRole="jobprofile" />
+          <NavigationProperty Name="stateofresidence" Relationship="skillsforhireModel.fk_localgovtofresidence_stateofresidence1" FromRole="localgovtofresidence" ToRole="stateofresidence" />
+        </EntityType>
+        <EntityType Name="skill">
+          <Key>
+            <PropertyRef Name="idSkill" />
+          </Key>
+          <Property Name="idSkill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillType" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="indprofiles" Relationship="skillsforhireModel.fk_indprofile_skill1" FromRole="skill" ToRole="indprofile" />
+          <NavigationProperty Name="jobprofiles" Relationship="skillsforhireModel.fk_JobProfile_skill1" FromRole="skill" ToRole="jobprofile" />
+        </EntityType>
+        <EntityType Name="starttime">
+          <Key>
+            <PropertyRef Name="idStartTime" />
+          </Key>
+          <Property Name="idStartTime" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobStartTime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="jobprofiles" Relationship="skillsforhireModel.fk_JobProfile_StartTime1" FromRole="starttime" ToRole="jobprofile" />
+        </EntityType>
+        <EntityType Name="stateofresidence">
+          <Key>
+            <PropertyRef Name="idStateOfResidence" />
+          </Key>
+          <Property Name="idStateOfResidence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="indprofiles" Relationship="skillsforhireModel.fk_indprofile_stateofresidence1" FromRole="stateofresidence" ToRole="indprofile" />
+          <NavigationProperty Name="jobprofiles" Relationship="skillsforhireModel.fk_JobProfile_stateofresidence1" FromRole="stateofresidence" ToRole="jobprofile" />
+          <NavigationProperty Name="localgovtofresidences" Relationship="skillsforhireModel.fk_localgovtofresidence_stateofresidence1" FromRole="stateofresidence" ToRole="localgovtofresidence" />
+        </EntityType>
+        <Association Name="fk_JobProfile_Budget1">
+          <End Type="skillsforhireModel.budget" Role="budget" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.jobprofile" Role="jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="budget">
+              <PropertyRef Name="idBudget" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="BudgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_indprofile_gender">
+          <End Type="skillsforhireModel.gender" Multiplicity="0..1" Role="gender" />
+          <End Type="skillsforhireModel.indprofile" Multiplicity="*" Role="indprofile" />
+          <ReferentialConstraint>
+            <Principal Role="gender">
+              <PropertyRef Name="idGender" />
+            </Principal>
+            <Dependent Role="indprofile">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_indprofile_localgovtofresidence1">
+          <End Type="skillsforhireModel.localgovtofresidence" Role="localgovtofresidence" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.indprofile" Role="indprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="localgovtofresidence">
+              <PropertyRef Name="idLocalGovtOfResidence" />
+            </Principal>
+            <Dependent Role="indprofile">
+              <PropertyRef Name="LocalGovtId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_indprofile_skill1">
+          <End Type="skillsforhireModel.skill" Role="skill" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.indprofile" Role="indprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="skill">
+              <PropertyRef Name="idSkill" />
+            </Principal>
+            <Dependent Role="indprofile">
+              <PropertyRef Name="SkillsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_indprofile_stateofresidence1">
+          <End Type="skillsforhireModel.stateofresidence" Role="stateofresidence" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.indprofile" Role="indprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stateofresidence">
+              <PropertyRef Name="idStateOfResidence" />
+            </Principal>
+            <Dependent Role="indprofile">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_JobStatus1">
+          <End Type="skillsforhireModel.jobstatu" Role="jobstatu" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.jobprofile" Role="jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobstatu">
+              <PropertyRef Name="idJobStatus" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="JobStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_localgovtofresidence1">
+          <End Type="skillsforhireModel.localgovtofresidence" Role="localgovtofresidence" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.jobprofile" Role="jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="localgovtofresidence">
+              <PropertyRef Name="idLocalGovtOfResidence" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="JobLocationLGId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_skill1">
+          <End Type="skillsforhireModel.skill" Role="skill" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.jobprofile" Role="jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="skill">
+              <PropertyRef Name="idSkill" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_StartTime1">
+          <End Type="skillsforhireModel.starttime" Role="starttime" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.jobprofile" Role="jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="starttime">
+              <PropertyRef Name="idStartTime" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="StartTimeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_JobProfile_stateofresidence1">
+          <End Type="skillsforhireModel.stateofresidence" Role="stateofresidence" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.jobprofile" Role="jobprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stateofresidence">
+              <PropertyRef Name="idStateOfResidence" />
+            </Principal>
+            <Dependent Role="jobprofile">
+              <PropertyRef Name="JobLocationStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_localgovtofresidence_stateofresidence1">
+          <End Type="skillsforhireModel.stateofresidence" Role="stateofresidence" Multiplicity="0..1" />
+          <End Type="skillsforhireModel.localgovtofresidence" Role="localgovtofresidence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stateofresidence">
+              <PropertyRef Name="idStateOfResidence" />
+            </Principal>
+            <Dependent Role="localgovtofresidence">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="mysavedjob">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="sJobTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="sJobId" Type="Int32" />
+          <Property Name="DateSaved" Type="DateTime" />
+          <Property Name="SavedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="jobpostflag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="PostURL" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="FlagReason" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeReported" Type="DateTime" />
+          <Property Name="ReportedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="profileflag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProfileUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FlagReason" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeReported" Type="DateTime" />
+          <Property Name="ReportedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="bankpaymentrequest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="emailUsed" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="paymentType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dateRequested" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="guardianjob">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="JobDescription" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="Experience" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Qualification" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="HowToApply" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="PublicationDate" Type="DateTime" />
+          <Property Name="ExpiryDate" Type="DateTime" />
+          <Property Name="Publish" Type="Boolean" />
+          <Property Name="EditedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeEdited" Type="DateTime" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="skillsforhireModelStoreContainer" CdmEntityContainer="skillsforhireEntities">
+          <EntitySetMapping Name="budgets">
+            <EntityTypeMapping TypeName="skillsforhireModel.budget">
+              <MappingFragment StoreEntitySet="budget">
+                <ScalarProperty Name="EstBudget" ColumnName="EstBudget" />
+                <ScalarProperty Name="idBudget" ColumnName="idBudget" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deletedmemberships">
+            <EntityTypeMapping TypeName="skillsforhireModel.deletedmembership">
+              <MappingFragment StoreEntitySet="deletedmembership">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="leavingReason" ColumnName="leavingReason" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="genders">
+            <EntityTypeMapping TypeName="skillsforhireModel.gender">
+              <MappingFragment StoreEntitySet="gender">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="idGender" ColumnName="idGender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="indprofiles">
+            <EntityTypeMapping TypeName="skillsforhireModel.indprofile">
+              <MappingFragment StoreEntitySet="indprofile">
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsGoldMember" ColumnName="IsGoldMember" />
+                <ScalarProperty Name="GoldSubExpire" ColumnName="GoldSubExpire" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Publish" ColumnName="Publish" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="JobExperience" ColumnName="JobExperience" />
+                <ScalarProperty Name="SkillsSpecific" ColumnName="SkillsSpecific" />
+                <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="LocalGovtId" ColumnName="LocalGovtId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="EmailAddr" ColumnName="EmailAddr" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="idIndProfile" ColumnName="idIndProfile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobprofiles">
+            <EntityTypeMapping TypeName="skillsforhireModel.jobprofile">
+              <MappingFragment StoreEntitySet="jobprofile">
+                <ScalarProperty Name="Publicise" ColumnName="Publicise" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="ContactFullName" ColumnName="ContactFullName" />
+                <ScalarProperty Name="BudgetId" ColumnName="BudgetId" />
+                <ScalarProperty Name="SpecificSkill" ColumnName="SpecificSkill" />
+                <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="JobLocationTown" ColumnName="JobLocationTown" />
+                <ScalarProperty Name="JobLocationLGId" ColumnName="JobLocationLGId" />
+                <ScalarProperty Name="JobLocationStateId" ColumnName="JobLocationStateId" />
+                <ScalarProperty Name="StartTimeId" ColumnName="StartTimeId" />
+                <ScalarProperty Name="JobStatusId" ColumnName="JobStatusId" />
+                <ScalarProperty Name="idJobProfile" ColumnName="idJobProfile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobstatus">
+            <EntityTypeMapping TypeName="skillsforhireModel.jobstatu">
+              <MappingFragment StoreEntitySet="jobstatus">
+                <ScalarProperty Name="ToStart" ColumnName="ToStart" />
+                <ScalarProperty Name="idJobStatus" ColumnName="idJobStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="localgovtofresidences">
+            <EntityTypeMapping TypeName="skillsforhireModel.localgovtofresidence">
+              <MappingFragment StoreEntitySet="localgovtofresidence">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="LGName" ColumnName="LGName" />
+                <ScalarProperty Name="idLocalGovtOfResidence" ColumnName="idLocalGovtOfResidence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="skills">
+            <EntityTypeMapping TypeName="skillsforhireModel.skill">
+              <MappingFragment StoreEntitySet="skill">
+                <ScalarProperty Name="SkillType" ColumnName="SkillType" />
+                <ScalarProperty Name="idSkill" ColumnName="idSkill" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="starttimes">
+            <EntityTypeMapping TypeName="skillsforhireModel.starttime">
+              <MappingFragment StoreEntitySet="starttime">
+                <ScalarProperty Name="JobStartTime" ColumnName="JobStartTime" />
+                <ScalarProperty Name="idStartTime" ColumnName="idStartTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stateofresidences">
+            <EntityTypeMapping TypeName="skillsforhireModel.stateofresidence">
+              <MappingFragment StoreEntitySet="stateofresidence">
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="idStateOfResidence" ColumnName="idStateOfResidence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mysavedjobs">
+            <EntityTypeMapping TypeName="skillsforhireModel.mysavedjob">
+              <MappingFragment StoreEntitySet="mysavedjob">
+                <ScalarProperty Name="SavedBy" ColumnName="SavedBy" />
+                <ScalarProperty Name="DateSaved" ColumnName="DateSaved" />
+                <ScalarProperty Name="sJobId" ColumnName="sJobId" />
+                <ScalarProperty Name="sJobTitle" ColumnName="sJobTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobpostflags">
+            <EntityTypeMapping TypeName="skillsforhireModel.jobpostflag">
+              <MappingFragment StoreEntitySet="jobpostflag">
+                <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+                <ScalarProperty Name="DateTimeReported" ColumnName="DateTimeReported" />
+                <ScalarProperty Name="FlagReason" ColumnName="FlagReason" />
+                <ScalarProperty Name="PostURL" ColumnName="PostURL" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="profileflags">
+            <EntityTypeMapping TypeName="skillsforhireModel.profileflag">
+              <MappingFragment StoreEntitySet="profileflag">
+                <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+                <ScalarProperty Name="DateTimeReported" ColumnName="DateTimeReported" />
+                <ScalarProperty Name="FlagReason" ColumnName="FlagReason" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bankpaymentrequests">
+            <EntityTypeMapping TypeName="skillsforhireModel.bankpaymentrequest">
+              <MappingFragment StoreEntitySet="bankpaymentrequest">
+                <ScalarProperty Name="dateRequested" ColumnName="dateRequested" />
+                <ScalarProperty Name="paymentType" ColumnName="paymentType" />
+                <ScalarProperty Name="emailUsed" ColumnName="emailUsed" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guardianjobs">
+            <EntityTypeMapping TypeName="skillsforhireModel.guardianjob">
+              <MappingFragment StoreEntitySet="guardianjob">
+                <ScalarProperty Name="DateTimeEdited" ColumnName="DateTimeEdited" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="Publish" ColumnName="Publish" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+                <ScalarProperty Name="HowToApply" ColumnName="HowToApply" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

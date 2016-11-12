@@ -1,0 +1,14 @@
+﻿Dear User
+
+Thank you for signing up for a new account at www.Skills4Hire.com.ng
+
+To log in to the site, use the following details:
+
+User name: <% UserName %>
+Your Password: <% Password %>
+
+You have been given a 6 months free gold membership. 
+
+We look foward to your contributions.
+
+The Skills4Hire Team

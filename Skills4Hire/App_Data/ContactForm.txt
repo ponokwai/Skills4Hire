@@ -1,0 +1,8 @@
+﻿Hi there,
+
+A user has left the following message on Skills4Hire website:
+
+Name: ##Name##
+Phone Number: ##PhoneNumber##
+Email Address: ##Email##
+Comments: ##Comments##

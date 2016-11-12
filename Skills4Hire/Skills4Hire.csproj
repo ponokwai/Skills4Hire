@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{893077B0-011F-4344-91C0-A4FE4E9215C7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Skills4Hire</RootNamespace>
+    <AssemblyName>Skills4Hire</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=3.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.6\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.2.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="NuGet.VisualStudio">
+      <HintPath>..\packages\NuGet.VisualStudio.2.8.6\lib\net45\NuGet.VisualStudio.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\AccountDeleteConfirmation.txt" />
+    <Content Include="App_Data\DonationPaymentDetails.txt" />
+    <Content Include="App_Data\ContactForm.txt" />
+    <Content Include="App_Data\ExpiredGoldMembership.txt" />
+    <Content Include="App_Data\ExtendGoldMembership.txt" />
+    <Content Include="App_Data\PasswordRecovery.txt" />
+    <Content Include="App_Data\RenewSubPaymentDetails.txt" />
+    <Content Include="App_Data\SignUpConfirmation.txt" />
+    <Content Include="CandidateProfile.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\owl.transitions.css" />
+    <Content Include="Donate.aspx" />
+    <Content Include="Errors\Error404.aspx" />
+    <Content Include="Errors\OtherErrors.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GuardianJobDetails.aspx" />
+    <Content Include="GuardianJobs.aspx" />
+    <Content Include="Images\PleaseWait.gif" />
+    <Content Include="Images\Skills4HireBrand.png" />
+    <Content Include="Management\BulkManageGuardianJobs.aspx" />
+    <Content Include="Management\Default.aspx" />
+    <Content Include="Management\DeletedAccounts.aspx" />
+    <Content Include="Management\EditJobPost.aspx" />
+    <Content Include="Management\EmailManager.aspx" />
+    <Content Include="Management\Flags.aspx" />
+    <Content Include="Management\GuardianJobs.aspx" />
+    <Content Include="Management\ManageAccount.aspx" />
+    <Content Include="Management\ManageProfession.aspx" />
+    <Content Include="Management\ManageUserSortOrder.aspx" />
+    <Content Include="Management\UserAccounts.aspx" />
+    <Content Include="Management\UserRoles.aspx" />
+    <Content Include="Management\UserSubscriptions.aspx" />
+    <Content Include="Management\ReviewJobPost.aspx" />
+    <Content Include="MyJobPosts.aspx" />
+    <Content Include="MyProfile.aspx" />
+    <Content Include="FindPeople.aspx" />
+    <Content Include="Management\AllJobs.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="JobDetail.aspx" />
+    <Content Include="MySavedJobs.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <EntityDeploy Include="Skills4Hire.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Skills4Hire.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Account\PasswordRecovery.aspx" />
+    <Content Include="PostAJob.aspx" />
+    <Content Include="RenewSubscription.aspx" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap-switch.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.2.1.js" />
+    <Content Include="Scripts\jquery-2.2.1.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\wow.min.js" />
+    <Content Include="Sitemap.txt" />
+    <Content Include="Sitemap.xml" />
+    <Content Include="Skills4Hire.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Skills4Hire.edmx</DependentUpon>
+      <LastGenOutput>Skills4Hire.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Skills4Hire.edmx.diagram">
+      <DependentUpon>Skills4Hire.edmx</DependentUpon>
+    </Content>
+    <Content Include="Skills4Hire.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Skills4Hire.edmx</DependentUpon>
+      <LastGenOutput>Skills4Hire.cs</LastGenOutput>
+    </Content>
+    <Content Include="Management\Management.Master" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Bundle.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire.pubxml" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire_R1.1.pubxml" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire_R1.2-FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire_R1.2.pubxml" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire_R18072016.pubxml" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire_R21062016.pubxml" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire_R22062016.pubxml" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire_R230116.pubxml" />
+    <Content Include="Scripts\jquery-2.2.1.min.map" />
+    <None Include="Properties\PublishProfiles\Patrick-Skills4Hire_R28062016.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Frontend.Master" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="FindJob.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\AppConfiguration.cs" />
+    <Content Include="App_Code\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="bankpaymentrequest.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="budget.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateProfile.aspx.cs">
+      <DependentUpon>CandidateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandidateProfile.aspx.designer.cs">
+      <DependentUpon>CandidateProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deletedmembership.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donate.aspx.cs">
+      <DependentUpon>Donate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Donate.aspx.designer.cs">
+      <DependentUpon>Donate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\OtherErrors.aspx.cs">
+      <DependentUpon>OtherErrors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\OtherErrors.aspx.designer.cs">
+      <DependentUpon>OtherErrors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gender.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="guardianjob.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GuardianJobDetails.aspx.cs">
+      <DependentUpon>GuardianJobDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuardianJobDetails.aspx.designer.cs">
+      <DependentUpon>GuardianJobDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuardianJobs.aspx.cs">
+      <DependentUpon>GuardianJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuardianJobs.aspx.designer.cs">
+      <DependentUpon>GuardianJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indprofile.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jobpostflag.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jobprofile.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jobstatu.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="localgovtofresidence.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Management\BulkManageGuardianJobs.aspx.cs">
+      <DependentUpon>BulkManageGuardianJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\BulkManageGuardianJobs.aspx.designer.cs">
+      <DependentUpon>BulkManageGuardianJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\DeletedAccounts.aspx.cs">
+      <DependentUpon>DeletedAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\DeletedAccounts.aspx.designer.cs">
+      <DependentUpon>DeletedAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\EditJobPost.aspx.cs">
+      <DependentUpon>EditJobPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\EditJobPost.aspx.designer.cs">
+      <DependentUpon>EditJobPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\EmailManager.aspx.cs">
+      <DependentUpon>EmailManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\EmailManager.aspx.designer.cs">
+      <DependentUpon>EmailManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Flags.aspx.cs">
+      <DependentUpon>Flags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Flags.aspx.designer.cs">
+      <DependentUpon>Flags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\GuardianJobs.aspx.cs">
+      <DependentUpon>GuardianJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\GuardianJobs.aspx.designer.cs">
+      <DependentUpon>GuardianJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ManageAccount.aspx.cs">
+      <DependentUpon>ManageAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\ManageAccount.aspx.designer.cs">
+      <DependentUpon>ManageAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Management.Master.cs">
+      <DependentUpon>Management.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Management.Master.designer.cs">
+      <DependentUpon>Management.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ManageProfession.aspx.cs">
+      <DependentUpon>ManageProfession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\ManageProfession.aspx.designer.cs">
+      <DependentUpon>ManageProfession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ManageUserSortOrder.aspx.cs">
+      <DependentUpon>ManageUserSortOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\ManageUserSortOrder.aspx.designer.cs">
+      <DependentUpon>ManageUserSortOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\UserAccounts.aspx.cs">
+      <DependentUpon>UserAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\UserAccounts.aspx.designer.cs">
+      <DependentUpon>UserAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\UserRoles.aspx.cs">
+      <DependentUpon>UserRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\UserRoles.aspx.designer.cs">
+      <DependentUpon>UserRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\UserSubscriptions.aspx.cs">
+      <DependentUpon>UserSubscriptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\UserSubscriptions.aspx.designer.cs">
+      <DependentUpon>UserSubscriptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ReviewJobPost.aspx.cs">
+      <DependentUpon>ReviewJobPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\ReviewJobPost.aspx.designer.cs">
+      <DependentUpon>ReviewJobPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyJobPosts.aspx.cs">
+      <DependentUpon>MyJobPosts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyJobPosts.aspx.designer.cs">
+      <DependentUpon>MyJobPosts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPeople.aspx.cs">
+      <DependentUpon>FindPeople.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPeople.aspx.designer.cs">
+      <DependentUpon>FindPeople.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AllJobs.aspx.cs">
+      <DependentUpon>AllJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\AllJobs.aspx.designer.cs">
+      <DependentUpon>AllJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend.Master.cs">
+      <DependentUpon>Frontend.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend.Master.designer.cs">
+      <DependentUpon>Frontend.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="JobDetail.aspx.cs">
+      <DependentUpon>JobDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobDetail.aspx.designer.cs">
+      <DependentUpon>JobDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mysavedjob.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MySavedJobs.aspx.cs">
+      <DependentUpon>MySavedJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MySavedJobs.aspx.designer.cs">
+      <DependentUpon>MySavedJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PasswordRecovery.aspx.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PasswordRecovery.aspx.designer.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostAJob.aspx.cs">
+      <DependentUpon>PostAJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostAJob.aspx.designer.cs">
+      <DependentUpon>PostAJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profileflag.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RenewSubscription.aspx.cs">
+      <DependentUpon>RenewSubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RenewSubscription.aspx.designer.cs">
+      <DependentUpon>RenewSubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="skill.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Skills4Hire.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Skills4Hire.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Skills4Hire.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Skills4Hire.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Skills4Hire.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="starttime.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stateofresidence.cs">
+      <DependentUpon>Skills4Hire.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FindJob.aspx.cs">
+      <DependentUpon>FindJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindJob.aspx.designer.cs">
+      <DependentUpon>FindJob.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1714</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1714/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

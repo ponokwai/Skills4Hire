@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.skills4hire.com.ng</loc>
+  </url>
+  <url>
+    <loc>http://www.skills4hire.com.ng/PostAJob.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.skills4hire.com.ng/FindJob.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.skills4hire.com.ng/FindPeople.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.skills4hire.com.ng/GuardianJobs.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.skills4hire.com.ng/ContactUs.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.skills4hire.com.ng/Donate.aspx</loc>
+  </url>
+</urlset>
