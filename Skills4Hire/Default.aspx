@@ -80,7 +80,7 @@
                             <i class="fa fa-paper-plane-o fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="service-heading">POST NEW JOB</h4>
-                        <p class="service-text">Post jobs you wish to hire people to do</p>
+                        <p class="service-text">Post jobs for freelancers</p>
                     </a>
                 </div>
 
@@ -91,7 +91,7 @@
                             <i class="fa fa-users fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="service-heading">FIND PEOPLE</h4>
-                        <p class="service-text">Filter through our database to find people with the right skills to hire</p>
+                        <p class="service-text">Search database to find the right skills to hire</p>
                     </a>
                 </div>
 
@@ -102,7 +102,7 @@
                             <i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="service-heading">FREELANCE JOBS</h4>
-                        <p class="service-text">Find freelance jobs around you that are posted by website members</p>
+                        <p class="service-text">Find freelance jobs around you</p>
                     </a>
                 </div>
 
