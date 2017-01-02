@@ -11,7 +11,26 @@ namespace Skills4Hire
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int candId = Convert.ToInt32(Request.QueryString.Get("CandId"));
+            if (candId < 1)
+            {
+                Response.Redirect("~/");
+            }
+            using (skillsforhireEntities db = new skillsforhireEntities())
+            {
+                var myCand = (from k in db.indprofiles
+                              where k.idIndProfile == candId
+                              select k).FirstOrDefault();
 
+                if (myCand != null)
+                {
+                    Page.Title = myCand.FullName + ": " + myCand.skill.SkillType;
+                }
+                else
+                {
+                    Response.Redirect("~/Errors/OtherErrors.aspx");
+                }
+            }
         }
 
         protected void btnReportLink_Click(object sender, EventArgs e)

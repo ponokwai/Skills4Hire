@@ -11,13 +11,27 @@ namespace Skills4Hire
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //cbxSaved();
-            /*
-                        if (!Page.IsPostBack || Request.QueryString.Get("JobId") != null)
-                        {
-                            int ID = request
-                        }
-            */
+            int jobId = Convert.ToInt32(Request.QueryString.Get("JobId"));
+            if (jobId < 1)
+            {
+                Response.Redirect("~/");
+            }
+            using (skillsforhireEntities db = new skillsforhireEntities())
+            {
+                var titleName = (from c in db.jobprofiles
+                                 where c.idJobProfile == jobId
+                                 select c).FirstOrDefault();
+
+                if (titleName != null)
+                {
+                    Page.Title = titleName.JobTitle;
+                }
+                else
+                {
+                    Response.Redirect("~/Errors/OtherErrors.aspx");
+                }
+
+            }
         }
 
 

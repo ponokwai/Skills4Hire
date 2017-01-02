@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Guardian Job Details" Language="C#" MasterPageFile="~/Frontend.Master" AutoEventWireup="true" CodeBehind="GuardianJobDetails.aspx.cs" Inherits="Skills4Hire.GuardianJobDetails" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Frontend.Master" AutoEventWireup="true" CodeBehind="GuardianJobDetails.aspx.cs" Inherits="Skills4Hire.GuardianJobDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -9,6 +9,7 @@
             <div>
                 <asp:FormView ID="FormView1" runat="server" DataKeyNames="Id" DataSourceID="EntityDataSource1" ItemType="Skills4Hire.guardianjob" OnDataBound="FormView1_DataBound">
                     <ItemTemplate>
+                        
                         <b>Job Title:</b>
                         <asp:Label ID="JobTitleLabel" runat="server" Text='<%# Bind("JobTitle") %>' />
                         <br />

@@ -1,11 +1,10 @@
-﻿<%@ Page Title="Job Details" Language="C#" MasterPageFile="~/Frontend.Master" AutoEventWireup="true" CodeBehind="JobDetail.aspx.cs" Inherits="Skills4Hire.JobDetails" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Frontend.Master" AutoEventWireup="true" CodeBehind="JobDetail.aspx.cs" Inherits="Skills4Hire.JobDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FrontendContent" runat="server">
     <div class="body-content">
         <div class="container">
-
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <div class="form-inline pull-right">
